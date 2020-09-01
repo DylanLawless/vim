@@ -41,8 +41,8 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 " set vim-ariline theme 
-" let g:airline_theme='simple'
-let g:airline_theme='minimalist'
+let g:airline_theme='simple'
+" let g:airline_theme='minimalist'
 
 " Set status line with filename showing
 "First, set last status to 2 using the following:
