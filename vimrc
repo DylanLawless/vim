@@ -259,3 +259,8 @@ set wildmenu
 "  "   Set it to -1 not to overrule hlsearch
 "  let g:limelight_priority = -1
 "
+" Submodules
+" To add a submodule, e.g. git within the git such as in bundles, use
+" git add submodule https://github.com/...
+" To clone use
+" git clone --recursive-submodules https://....main_project
