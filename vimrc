@@ -264,3 +264,6 @@ set wildmenu
 " git add submodule https://github.com/...
 " To clone use
 " git clone --recursive-submodules https://....main_project
+" or if you forgot or cant use recursive, do 
+" git submodule init
+" git submodule update
