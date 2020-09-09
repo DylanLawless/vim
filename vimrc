@@ -206,7 +206,8 @@ autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\te
 autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
 "MARKDOWN
-
+" Don't have the sections closed when you open a file
+set nofoldenable
 
 
 " To set up powerline for vim
