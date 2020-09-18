@@ -19,10 +19,10 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
+" set nowrap
+set showcmd
 set foldmethod=indent
 set list listchars=tab:›\ ,trail:-,nbsp:·,extends:>,precedes:<,eol:¬
-
-set showcmd
 
 execute pathogen#infect()
 
@@ -51,14 +51,16 @@ set relativenumber
 ":au WinEnter * :wincmd =
 
 " Undo changes to a file after closing and reopening
-set undofile
 set undodir=~/.vim/undodir
+set undofile
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
 " Use TABs not spaces
-set tabstop=4		" The width of a TAB is set to 4 but still is a \t. Vim will only interpret it to be having a width of 4.
+" The width of a TAB is set to 4 but still is a \t. 
+" Vim will only interpret it to be having a width of 4.
+set tabstop=4
 set shiftwidth=4	" Indents will have a width of 4
 set softtabstop=4	" Sets the number of columns for a TAB
 
@@ -72,6 +74,7 @@ set softtabstop=4	" Sets the number of columns for a TAB
 " => Searches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make search case insensitive
+" Incremental search gives results while search
 set hlsearch
 set incsearch
 set ignorecase
@@ -95,8 +98,8 @@ set wildmenu
 " => Colour scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ~/.vim/colors
-" color wombat256mod
-color slate
+"color wombat256mod
+"color gruvbox
 set background=dark
 set t_Co=256
 
