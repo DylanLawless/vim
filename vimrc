@@ -73,6 +73,7 @@ set softtabstop=4	" Sets the number of columns for a TAB
 " Start scrolling 8 lines from top or bottom
 set scrolloff=8
 
+" set signcolumn=yes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
