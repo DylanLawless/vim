@@ -70,6 +70,9 @@ set softtabstop=4	" Sets the number of columns for a TAB
 " set shiftround
 " set noexpandtab
 
+" Start scrolling 8 lines from top or bottom
+set scrolloff=8
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
