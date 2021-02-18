@@ -7,8 +7,7 @@ let mapleader =" "
 " set indentguide (pathogen bundle) by default
 let g:indent_guides_enable_on_vim_startup = 1
 
-" Navigating with guides
-"Unmap arrow keys
+" Navigating with guides, Unmap arrow keys
 no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
@@ -19,11 +18,6 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-" set nowrap
-set showcmd
-set foldmethod=indent
-set list listchars=tab:›\ ,trail:-,nbsp:·,extends:>,precedes:<,eol:¬
-
 execute pathogen#infect()
 
 " When file is edited its plugin is loaded
@@ -32,30 +26,35 @@ filetype plugin on
 filetype indent on
 syntax on
 
-" Splits open at the bottom and right.
-set splitbelow
-set splitright
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
 "set to recognise .md as markdown for colour
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Sets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set nowrap
+set showcmd
+set foldmethod=indent
+set list listchars=tab:›\ ,trail:-,nbsp:·,extends:>,precedes:<,eol:¬
+
+" Splits open at the bottom and right.
+set splitbelow
+set splitright
 
 " Always show line numbers but only in the current window
 set number
 set relativenumber
 
-":au WinEnter * :setlocal number
-":au WinEnter * :setlocal nonumber
-
-" Automatically sresize vertical splits
-":au WinEnter * :set winfixheight
-":au WinEnter * :wincmd =
-
 " Undo changes to a file after closing and reopening
 set undodir=~/.vim/undodir
 set undofile
-
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+set noswapfile
+set nobackup
 
 " Use TABs not spaces
 " The width of a TAB is set to 4 but still is a \t. 
@@ -63,12 +62,6 @@ autocmd! bufwritepost .vimrc source %
 set tabstop=4
 set shiftwidth=4	" Indents will have a width of 4
 set softtabstop=4	" Sets the number of columns for a TAB
-
-" Expand TABs to spaces
-" set expandtab
-
-" set shiftround
-" set noexpandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searches
@@ -107,6 +100,7 @@ set t_Co=256
 set ruler
 set incsearch
 set colorcolumn=80
+
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 " set vim-ariline theme 
@@ -212,9 +206,6 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MARKDOWN
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
 
 " To set up powerline for vim
 " cd ~/.vim/bundle/
