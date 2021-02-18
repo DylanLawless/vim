@@ -63,6 +63,11 @@ set tabstop=4
 set shiftwidth=4	" Indents will have a width of 4
 set softtabstop=4	" Sets the number of columns for a TAB
 
+" Start scrolling 8 lines from top or bottom
+set scrolloff=8
+
+" set signcolumn=yes
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
