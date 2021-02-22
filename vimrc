@@ -212,6 +212,14 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MARKDOWN
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""
+" plasticboy/vim-markdown
+""""""""""""""""""""""""
+" let g:vim_markdown_folding_disabled = 1
+autocmd Filetype markdown normal zR
+
+""""""""""""""""""""""""
 " vim-instant-markdown
 """"""""""""""""""""""""
 " For "vim-instant-markdown" istall in bundles, then run
@@ -221,7 +229,7 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 " InstantMarkdownStop
 """"""""""""""""""""""""
 let g:instant_markdown_slow = 1
-"let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 0
 "let g:instant_markdown_allow_unsafe_content = 1
 let g:instant_markdown_allow_external_content = 0
 "let g:instant_markdown_mathjax = 1
@@ -238,10 +246,6 @@ let g:instant_markdown_allow_external_content = 0
 
 
 " https://www.youtube.com/watch?v=YhqsjUUHj6g
-
-" leader remap not working at the moment
-" rebind the <leader> key to be , instead of \
-" let mapleader = ","
 
 " map sort function to ,s  (good for python etc)
 " vnoremap <Leader>s :sort<CR>
