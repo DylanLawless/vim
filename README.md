@@ -1,6 +1,9 @@
 # .vim
 See vimrc for configuration.
-Pathogen is used to loading plugins.
+Plugins are managed by saving them in `/bundle/`. 
+They are then loaded by `/autoload/pathogen.vim` as shown by
+[tpope/vim-pathogen](https://github.com/tpope/vim-pathogen).
+
 To get all bundles linked to their original repositories, 
 make sure to clone the submodules (otherwise you will clone a static copy of bundles).
 
