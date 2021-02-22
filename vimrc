@@ -1,7 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+"" {{{ General
+
 " let mapleader =","
 let mapleader =" "
 
@@ -30,15 +28,11 @@ syntax on
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-"set to recognise .md as markdown for colour
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Sets
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets {{{
 
-" set nowrap
+"   set nowrap
 set showcmd
 set foldmethod=indent
 set list listchars=tab:›\ ,trail:-,nbsp:·,extends:>,precedes:<,eol:¬
@@ -67,11 +61,17 @@ set softtabstop=4	" Sets the number of columns for a TAB
 " Start scrolling 8 lines from top or bottom
 set scrolloff=8
 
+" set cursorline
+set ruler
+set incsearch
+set colorcolumn=80
+
 " set signcolumn=yes
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Searches
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" {{{ Searches
+
 " Make search case insensitive
 " Incremental search gives results while search
 set hlsearch
@@ -93,21 +93,21 @@ set wildmenu
 " Consider
 " - :b lets you autocomplete any open buffer
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colour scheme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" {{{ Colour scheme
+
 " ~/.vim/colors
 "color wombat256mod
 "color gruvbox
 set background=dark
 set t_Co=256
 
-"set cursorline
-set ruler
-set incsearch
-set colorcolumn=80
-
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+" }}}
+
+" {{{ Airline
 
 " set vim-ariline theme 
 let g:airline_theme='simple'
@@ -120,9 +120,10 @@ let g:airline_theme='simple'
 "set statusline=%F
 "For the full path to the file, use %F. For short name use %f
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" {{{ NERDTree
+
 let g:NERDTreeWinPos = "right"
 " Open with Cntrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -139,10 +140,9 @@ map <leader>gh :diffget //3<CR>
 map <leader>gu :diffget //2<CR>
 map <leader>gs :G<CR>
 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => LaTeX
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{ LaTeX
 
 " Starting with Vim 7, the filetype of empty .tex files defaults 
 " to 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -158,9 +158,9 @@ let g:vimtex_quickfix_open_on_warning=0
 let g:vimtex_quickfix_autoclose_after_keystrokes=2
 let g:vimtex_quickfix_mode=2  " open on errors without focus
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Snippets
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" {{{ Snippets
 "
 " LATEX
 " Word count:
@@ -208,10 +208,13 @@ autocmd FileType tex inoremap ,nu $\varnothing$
 autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => MARKDOWN
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{  MARKDOWN
+
+"set to recognise .md as markdown for colour
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 """"""""""""""""""""""""
 " plasticboy/vim-markdown
@@ -237,6 +240,10 @@ let g:instant_markdown_allow_external_content = 0
 "let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
 "let g:instant_markdown_autoscroll = 0
 "let g:instant_markdown_port = 8888
+"
+" }}}
+
+" {{{ Other
 "
 " To set up powerline for vim
 " cd ~/.vim/bundle/
@@ -291,3 +298,7 @@ let g:instant_markdown_allow_external_content = 0
 " or if you forgot or cant use recursive, do 
 " git submodule init
 " git submodule update
+"
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
