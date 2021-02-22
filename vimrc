@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " let mapleader =","
 let mapleader =" "
 
@@ -211,14 +212,29 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MARKDOWN
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" vim-instant-markdown
+""""""""""""""""""""""""
+" For "vim-instant-markdown" istall in bundles, then run
+" npm -g install instant-markdown-d
+" run with
+" InstantMarkdownPreview
+" InstantMarkdownStop
+""""""""""""""""""""""""
+let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_allow_unsafe_content = 1
+let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"
 " To set up powerline for vim
 " cd ~/.vim/bundle/
 " git clone https://github.com/powerline/powerline.git
 " https://powerline.readthedocs.io/en/latest/usage/other.html#vim-statusline
 " set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
-
-
 
 
 " https://www.youtube.com/watch?v=YhqsjUUHj6g
