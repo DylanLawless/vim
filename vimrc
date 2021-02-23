@@ -221,6 +221,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 """"""""""""""""""""""""
 " let g:vim_markdown_folding_disabled = 1
 autocmd Filetype markdown normal zR
+let g:vim_markdown_math = 1
 
 """"""""""""""""""""""""
 " vim-instant-markdown
