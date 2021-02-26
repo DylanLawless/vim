@@ -221,7 +221,11 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 """"""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
 autocmd Filetype markdown normal zR
-let g:vim_markdown_math = 1
+
+" setting math = 1 was used to prevent syntax problem
+" but it then caused problem with some loop error on vimtex
+let g:vim_markdown_math = 0
+
 
 """"""""""""""""""""""""
 " vim-instant-markdown
