@@ -45,11 +45,13 @@ set splitright
 set number
 set relativenumber
 
-" Undo changes to a file after closing and reopening
-set undodir=~/.vim/undodir
+" Undo changes to a file after closing and reopening. Double slash for name collisions
+set undodir=~/.vim/undodir//
 set undofile
-set noswapfile
-set nobackup
+" Instead of noswapfile in wkdir send them to these dir
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
 
 " Use TABs not spaces
 " The width of a TAB is set to 4 but still is a \t. 
@@ -221,10 +223,10 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 """"""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
 autocmd Filetype markdown normal zR
-
-" setting math = 1 was used to prevent syntax problem
-" but it then caused problem with some loop error on vimtex
-let g:vim_markdown_math = 0
+" 
+" " setting math = 1 was used to prevent syntax problem
+" " but it then caused problem with some loop error on vimtex
+ let g:vim_markdown_math = 1
 
 
 """"""""""""""""""""""""
