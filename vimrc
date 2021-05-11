@@ -221,9 +221,20 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 """"""""""""""""""""""""
 " plasticboy/vim-markdown
 """"""""""""""""""""""""
-let g:vim_markdown_folding_disabled = 1
-autocmd Filetype markdown normal zR
-" 
+" Disable Folding 
+" let g:vim_markdown_folding_disabled = 1
+" autocmd Filetype markdown normal zR
+
+let g:vim_markdown_folding_level = 1
+" `zR`: opens all folds
+" `zr`: reduces fold level throughout the buffer
+" `zm`: increases fold level throughout the buffer
+" `zM`: folds everything all the way
+" `za`: open a fold your cursor is on
+" `zA`: open a fold your cursor is on recursively
+" `zc`: close a fold your cursor is on
+" `zC`: close a fold your cursor is on recursively
+
 " " setting math = 1 was used to prevent syntax problem
 " " but it then caused problem with some loop error on vimtex
  let g:vim_markdown_math = 1
