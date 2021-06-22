@@ -1,3 +1,18 @@
+" {{{ Colour scheme
+
+" ~/.vim/colors
+"color wombat256mod
+"color gruvbox
+" set background=dark
+" set term=xterm-256color
+
+" Shows iTerm2 colors correctly
+set t_Co=256
+
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+" }}}
+
 "" {{{ General
 
 " let mapleader =","
@@ -28,6 +43,56 @@ syntax on
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" }}}
+
+" {{{  MARKDOWN
+
+"set to recognise .md as markdown for colour
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+""""""""""""""""""""""""
+" plasticboy/vim-markdown
+""""""""""""""""""""""""
+" Disable Folding 
+let g:vim_markdown_folding_disabled = 1
+" autocmd Filetype markdown normal zR
+
+" let g:vim_markdown_folding_level = 1
+
+" `zR`: opens all folds
+" `zr`: reduces fold level throughout the buffer
+" `zm`: increases fold level throughout the buffer
+" `zM`: folds everything all the way
+" `za`: open a fold your cursor is on
+" `zA`: open a fold your cursor is on recursively
+" `zc`: close a fold your cursor is on
+" `zC`: close a fold your cursor is on recursively
+
+" " setting math = 1 was used to prevent syntax problem
+" " but it then caused problem with some loop error on vimtex
+ let g:vim_markdown_math = 1
+
+
+""""""""""""""""""""""""
+" vim-instant-markdown
+""""""""""""""""""""""""
+" For "vim-instant-markdown" install in bundles, then run
+" npm -g install instant-markdown-d
+" run with
+" InstantMarkdownPreview
+" InstantMarkdownStop
+""""""""""""""""""""""""
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_allow_unsafe_content = 1
+let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"
 " }}}
 
 " Sets {{{
@@ -94,18 +159,6 @@ set wildmenu
 
 " Consider
 " - :b lets you autocomplete any open buffer
-
-" }}}
-
-" {{{ Colour scheme
-
-" ~/.vim/colors
-"color wombat256mod
-"color gruvbox
-set background=dark
-set t_Co=256
-
-highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 " }}}
 
@@ -210,55 +263,6 @@ autocmd FileType tex inoremap ,nu $\varnothing$
 autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
-" }}}
-
-" {{{  MARKDOWN
-
-"set to recognise .md as markdown for colour
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-""""""""""""""""""""""""
-" plasticboy/vim-markdown
-""""""""""""""""""""""""
-" Disable Folding 
-" let g:vim_markdown_folding_disabled = 1
-" autocmd Filetype markdown normal zR
-
-let g:vim_markdown_folding_level = 1
-" `zR`: opens all folds
-" `zr`: reduces fold level throughout the buffer
-" `zm`: increases fold level throughout the buffer
-" `zM`: folds everything all the way
-" `za`: open a fold your cursor is on
-" `zA`: open a fold your cursor is on recursively
-" `zc`: close a fold your cursor is on
-" `zC`: close a fold your cursor is on recursively
-
-" " setting math = 1 was used to prevent syntax problem
-" " but it then caused problem with some loop error on vimtex
- let g:vim_markdown_math = 1
-
-
-""""""""""""""""""""""""
-" vim-instant-markdown
-""""""""""""""""""""""""
-" For "vim-instant-markdown" istall in bundles, then run
-" npm -g install instant-markdown-d
-" run with
-" InstantMarkdownPreview
-" InstantMarkdownStop
-""""""""""""""""""""""""
-let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
-"let g:instant_markdown_allow_unsafe_content = 1
-let g:instant_markdown_allow_external_content = 0
-"let g:instant_markdown_mathjax = 1
-"let g:instant_markdown_mermaid = 1
-"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
-"let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8888
-"
 " }}}
 
 " {{{ Other
