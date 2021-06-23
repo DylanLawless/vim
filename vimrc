@@ -324,3 +324,46 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
+"
+" {{{ zettelkasten
+let g:zettelkastenf = "~/web_local/notes/"
+let g:zettelkastenl = "~/web_local/notes/"
+let g:zettelkastenp = "~/web_local/notes/"
+
+command! -nargs=1 NewZettelf :execute ":tabnew" zettelkastenf . strftime("%Y%m%d%H%M") . "-fleet" . "-<args>.md"
+command! -nargs=1 NewZettell :execute ":tabnew" zettelkastenl . strftime("%Y%m%d%H%M") . "-lit" . "-<args>.md"
+command! -nargs=1 NewZettelp :execute ":tabnew" zettelkastenp . strftime("%Y%m%d%H%M") . "-perm" . "-<args>.md"
+" You can read about this by typing :help strftime and otherwise this is a good resource https://vim.fandom.com/wiki/Insert_current_date_or_time.
+
+" New Zettle
+nnoremap <leader>nzf :NewZettelf 
+nnoremap <leader>nzl :NewZettell 
+nnoremap <leader>nzp :NewZettelp 
+
+" CtrlP function for inserting a markdown link with Ctrl-X
+function! CtrlPOpenFunc(action, line)
+   if a:action =~ '^h$'
+      " Get the filename
+      let filename = fnameescape(fnamemodify(a:line, ':t'))
+	  let filename_wo_timestamp = fnameescape(fnamemodify(a:line, ':t:s/\d\+-//'))
+
+      " Close CtrlP
+      call ctrlp#exit()
+      call ctrlp#mrufiles#add(filename)
+
+      " Insert the markdown link to the file in the current buffer
+	  let mdlink = "[ ".filename_wo_timestamp." ]( ".filename." )"
+      put=mdlink
+  else
+      " Use CtrlP's default file opening function
+      call call('ctrlp#acceptfile', [a:action, a:line])
+   endif
+endfunction
+
+let g:ctrlp_open_func = {
+         \ 'files': 'CtrlPOpenFunc',
+         \ 'mru files': 'CtrlPOpenFunc'
+         \ }
+
+
+" }}}
