@@ -13,7 +13,7 @@ this file, allowing neat section displays for editing vimrc.
 # Submodules
 To add a submodule, e.g. git within the git such as in bundles, use
 ```
-git add submodule https://github.com/...
+git submodule add https://github.com/...
 ```
 To clone use
 ```
