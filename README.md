@@ -17,7 +17,7 @@ git submodule add https://github.com/...
 ```
 To clone use
 ```
-git clone --recursive-submodules https://....main_project
+git clone --recursive git://github.com/foo/bar.git
 ```
 or if you forgot or cant use recursive, do 
 ```
