@@ -326,9 +326,9 @@ autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 " vim:foldmethod=marker:foldlevel=0
 "
 " {{{ zettelkasten
-let g:zettelkastenf = "~/web_local/notes/"
-let g:zettelkastenl = "~/web_local/notes/"
-let g:zettelkastenp = "~/web_local/notes/"
+let g:zettelkastenf = "~/web/notes/"
+let g:zettelkastenl = "~/web/notes/"
+let g:zettelkastenp = "~/web/notes/"
 
 command! -nargs=1 NewZettelf :execute ":tabnew" zettelkastenf . strftime("%Y%m%d%H%M") . "-fleet" . "-<args>.md"
 command! -nargs=1 NewZettell :execute ":tabnew" zettelkastenl . strftime("%Y%m%d%H%M") . "-lit" . "-<args>.md"
